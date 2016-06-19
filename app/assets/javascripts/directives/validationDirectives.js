@@ -91,7 +91,7 @@ validator.directive('ensureUniqueUsername', ['$http', function($http) {
 // Configuration of captcha
 validator.config(function (reCAPTCHAProvider) {
     // required
-    reCAPTCHAProvider.setPublicKey('6LeV5wQTAAAAAA4uCs95tbEZwBNP55UlSCiI21lC');
+    reCAPTCHAProvider.setPublicKey('6Lci6gQTAAAAABEsdaFlpm7OzIto_llcTQtwRn40');
     // optional
     reCAPTCHAProvider.setOptions({
         theme: 'clean'

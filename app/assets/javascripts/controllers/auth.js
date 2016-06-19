@@ -32,7 +32,7 @@ scrummer.controller('logoutCtrl', ['$scope', '$location', 'AuthToken',
 scrummer.controller('signupCtrl', ['$scope', '$location', 'usersFactory', 'reCAPTCHA', 'flash','alertService',
   function($scope, $location, usersFactory, reCAPTCHA, flash,alertService) {
     $scope.submitted = false; // Set form unsubmitted to unable validation messages
-    reCAPTCHA.setPublicKey('6LeV5wQTAAAAAA4uCs95tbEZwBNP55UlSCiI21lC');
+    reCAPTCHA.setPublicKey('6Lci6gQTAAAAABEsdaFlpm7OzIto_llcTQtwRn40');
 
     $scope.createNewUser = function() {
       if ($scope.signupform.$valid) {
