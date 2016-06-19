@@ -2,7 +2,7 @@
   <a class="btn btn-common" ng-href="/#/project/new" style="font-size: 15px;"><span class="glyphicon glyphicon-plus-sign" style="font-size: 12px; margin-bottom: 4px;"></span> New project</a>
   <hr>
   <div ng-repeat="project in Project.projects">
-  <a class="btn btn-project" ng-href="/#/projects/{{project.id}} ng-class="project.id === Project.activeProjectID ? 'active' : ''">{{project.name}}</a>
+  <a class="btn btn-project" ng-href="/#/projects/{{project.id}}" ng-class="project.id == Project.activeProjectID ? 'active': ''">{{project.name}}</a>
   <hr>
   </div>
 </div>

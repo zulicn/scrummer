@@ -54,6 +54,7 @@
 }
 
 #header {
+  margin-top: 90px;
   font-size: 14px;
 }
 
@@ -131,7 +132,7 @@ body {
   @include border-radius(4px);
 
   .title {
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Pacifico', cursive;
 
   }
@@ -159,7 +160,7 @@ body {
 
 /*** Header ***/
 .header {
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Pacifico', cursive;
   letter-spacing: 1.5px;
 
@@ -300,7 +301,7 @@ body {
       background: #e67e22;
       border: 2px solid #d35400;
       @include border-radius(3px);
-      font-size: 18px;
+      font-size: 15px;
       color: #FFFFFF;
       line-height: 17px;
     }
@@ -358,7 +359,7 @@ body {
       background: #e67e22;
       border: 2px solid #d35400;
       @include border-radius(3px);
-      font-size: 18px;
+      font-size: 15px;
       color: #FFFFFF;
       line-height: 17px;
     }
@@ -413,7 +414,7 @@ body {
       background: #e67e22;
       border: 2px solid #d35400;
       @include border-radius(3px);
-      font-size: 18px;
+      font-size: 15px;
       color: #FFFFFF;
       line-height: 17px;
     }
@@ -516,11 +517,50 @@ menu {
   }
 }
 
+.alert-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.alert-inner-message {
+  width: 81%;
+  margin: 0 auto;
+}
+
 /* Alerts */
 .alert {
   margin-top: 15px;
 }
 
+.alert-dismissable .close, .alert-dismissible .close {
+  top: -5px;
+}
+
 .header-nav {
   cursor: pointer;
+}
+
+.menu-container .btn-project.focused {
+  box-shadow: none;
+}
+
+.menu-container .btn-project.active {
+  box-shadow: none;
+  background: #e1e1e1;
+  padding: 20px 10px;
+}
+
+.menu-container .btn-project {
+  padding: 20px 10px;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+hr {
+  margin: 2px 0px;
 }

@@ -1,5 +1,5 @@
-scrummer.controller('boardCtrl', ['$scope', 'boardFactory', '$routeParams',
-  function($scope, boardFactory, $routeParams) {
+scrummer.controller('boardCtrl', ['$scope', 'boardFactory', '$routeParams', 'alertService',
+  function($scope, boardFactory, $routeParams, alertService) {
     boardFactory.get($routeParams.id)
     .success(function(result) {
       $scope.tickets = result.document.board.tickets;
@@ -8,6 +8,9 @@ scrummer.controller('boardCtrl', ['$scope', 'boardFactory', '$routeParams',
       $scope.description = result.document.board.sprint.start_date + '-' + result.document.board.sprint.end_date;
       $scope.sortableOptionsList = {};
       _.each($scope.statuses, function(status) { $scope.sortableOptionsList[status.name] = createOptions(status.name); });
+    })
+    .error(function(result) {
+      alertService.add(result.status.message, 'warning');
     });
 
     function createOptions(listName) {

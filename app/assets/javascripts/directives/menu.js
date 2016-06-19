@@ -20,8 +20,9 @@ scrummer.directive('menu', ['projectFactory', '$location', function() {
       if ($location.path()) {
         var indexOfProjectID = $location.path().split("/").indexOf("projects") + 1
         var projectID = indexOfProjectID > 0 ? location.hash.split("/")[indexOfProjectID] : null
-        project.activeProjectID = projectID
+        project.activeProjectID = parseInt(projectID)
       }
+      
 
     }
 
