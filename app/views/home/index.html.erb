@@ -1,7 +1,9 @@
 <div ng-app="scrummer">
   <div class="container">
     <div ng-controller="alertsCtrl">
-      <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+      <div class="alert-message">
+        <alert class="alert-inner-message" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+      </div>
     </div>
   </div>
   <div class="view-container">

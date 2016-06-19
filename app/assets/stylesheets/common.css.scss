@@ -531,9 +531,25 @@ menu {
   }
 }
 
+.alert-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.alert-inner-message {
+  width: 80%;
+  margin: 0 auto;
+}
+
 /* Alerts */
 .alert {
   margin-top: 15px;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+  top: -5px;
 }
 
 .header-nav {
