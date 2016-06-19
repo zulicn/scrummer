@@ -18,7 +18,7 @@ class Api::UsersController < ApiController
         UserMailer.confirmation_email(user, request.url.split('/api').first).deliver
       rescue => e
         puts e.message
-        puts e.backtrace.join("\n")
+        puts e.backtrace.first(10).join("\n")
         puts 'Failed to send email'
       end
       render response: { :message => "User created."}
