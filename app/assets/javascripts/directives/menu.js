@@ -1,4 +1,4 @@
-scrummer.directive('menu', ['projectFactory',function() {
+scrummer.directive('menu', ['projectFactory', '$location', function() {
 
   return {
     restrict: 'E',
@@ -9,14 +9,21 @@ scrummer.directive('menu', ['projectFactory',function() {
       project: '=',
     },
     link: function($scope, $element) {},
-     controller: function($scope, $element, projectFactory) {
+    controller: function($scope, $element, projectFactory, $location) {
 
-      var project=this;
-       projectFactory.index()
+      var project = this;
+      projectFactory.index()
       .success(function(data) {
-      project.projects = data.document.projects;
-       });
+        project.projects = data.document.projects;
+      });
+      
+      if ($location.path()) {
+        var indexOfProjectID = $location.path().split("/").indexOf("projects") + 1
+        var projectID = indexOfProjectID > 0 ? location.hash.split("/")[indexOfProjectID] : null
+        project.activeProjectID = projectID
+      }
 
     }
+
   };
 }]);

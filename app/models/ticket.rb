@@ -37,6 +37,6 @@ class Ticket < ActiveRecord::Base
 
   private
   def set_seq
-    self.seq = Ticket.last.seq + 1
+    self.seq = Ticket.last ? Ticket.last.seq + 1 : 0
   end
 end
