@@ -17,7 +17,7 @@ auth.factory('AuthToken', function() {
   });
 
 // Service for user login
-auth.factory("AuthService", function($http, $q, $rootScope, AuthToken, $location) {
+auth.factory("AuthService", function($http, $q, $rootScope, AuthToken, $location, alertService) {
   return {
     login: function(email, password) {
       var d = $q.defer();
@@ -30,8 +30,7 @@ auth.factory("AuthService", function($http, $q, $rootScope, AuthToken, $location
         if(resp.status.message == "OK") { $location.path('/dashboard'); }
         else { $location.path('/'); }
       }).error(function(resp) {
-        alert(resp.status.message);
-        $location.path('/');
+        alertService.add(resp.status.message, 'danger');
       });
       return d.promise;
     }
@@ -58,17 +57,19 @@ auth.config(function($httpProvider) {
   return $httpProvider.interceptors.push("AuthInterceptor");
 });
 
-scrummer.factory('resetFactory', function($http, $q, $rootScope, $location) {
+scrummer.factory('resetFactory', function($http, $q, $rootScope, $location, alertService) {
   return {
     reset_password: function(email) {
       var d = $q.defer();
       $http.post('api/users/reset_password', {
         email: email
       }).success(function(resp) {
-        if(resp.status.message == "OK") {alert("Email with password reset instruction has been sent!"); $location.path('#/login'); }
+        if(resp.status.message == "OK") {
+          alertService.add("Email with password reset instruction has been sent!", "success");
+          $location.path('#/login');
+        }
       }).error(function(resp) {
-        alert("There is no user with that email account");
-        $location.path('#/reset');
+        alertService.add("There is no user with that email account", "danger");
       });
       return d.promise;
     }

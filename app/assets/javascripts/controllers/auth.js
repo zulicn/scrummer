@@ -56,6 +56,5 @@ scrummer.controller('resetCtrl', ['$scope', '$location','resetFactory',
   function($scope, $location,resetFactory) {
     $scope.doReset = function() {
       resetFactory.reset_password($scope.reset.email);
-      $location.path('#/login');
     }
 }]);
