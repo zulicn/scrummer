@@ -28,6 +28,6 @@ Scrummer::Application.configure do
   config.assets.debug = true
 
   # reCAPTCHA keys
-  RECAPTCHA_PUBLIC_KEY= '6LeV5wQTAAAAAA4uCs95tbEZwBNP55UlSCiI21lC'
-  RECAPTCHA_PRIVATE_KEY= '6LeV5wQTAAAAAMrkZASznvOsrM3-h9WPxjwwskao'
+  RECAPTCHA_PUBLIC_KEY= '6Lci6gQTAAAAABEsdaFlpm7OzIto_llcTQtwRn40'
+  RECAPTCHA_PRIVATE_KEY= '6Lci6gQTAAAAAMf7uxNwR8K1RRBYmNGkT0g5ANGK'
 end
