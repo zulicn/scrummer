@@ -115,7 +115,6 @@ body {
       font-size: 14px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 }
 
@@ -133,7 +132,7 @@ body {
   @include border-radius(4px);
 
   .title {
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Pacifico', cursive;
 
   }
@@ -147,7 +146,6 @@ body {
       font-size: 14px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 
   .error {
@@ -162,7 +160,7 @@ body {
 
 /*** Header ***/
 .header {
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Pacifico', cursive;
   letter-spacing: 1.5px;
 
@@ -183,13 +181,11 @@ body {
     font-size: 12px;
     color: #e67e22;
     line-height: 17px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
   }
 
   .icon {
     color: #e67e22;
     line-height: 17px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
   }
 }
 
@@ -209,7 +205,6 @@ body {
       font-size: 18px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 
   .btn-project {
@@ -221,7 +216,6 @@ body {
     color: #e67e22;
     text-align: left;
     line-height: 2px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     width: 100%;
     }
 }
@@ -257,7 +251,6 @@ body {
   .glyphicon {
     color: #e67e22;
     line-height: 17px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
   }
 }
 
@@ -285,7 +278,6 @@ body {
       font-size: 14px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 
   .error {
@@ -309,16 +301,14 @@ body {
       background: #e67e22;
       border: 2px solid #d35400;
       @include border-radius(3px);
-      font-size: 18px;
+      font-size: 15px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 
     .icon {
     color: #e67e22;
     line-height: 17px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     float: right;
     margin-right: 2%;
     font-size: 20px;
@@ -351,7 +341,6 @@ body {
   color: #FFFFFF;
   opacity:0.8;
   line-height: 17px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
 
   .ticket {
     font-family: 'Lato';
@@ -370,10 +359,9 @@ body {
       background: #e67e22;
       border: 2px solid #d35400;
       @include border-radius(3px);
-      font-size: 18px;
+      font-size: 15px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 }
 
@@ -415,7 +403,6 @@ body {
       font-size: 18px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 }
 
@@ -427,10 +414,9 @@ body {
       background: #e67e22;
       border: 2px solid #d35400;
       @include border-radius(3px);
-      font-size: 18px;
+      font-size: 15px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 
 }
@@ -472,7 +458,6 @@ body {
       font-size: 14px;
       color: #FFFFFF;
       line-height: 17px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.26);
     }
 
   .error {
@@ -556,4 +541,26 @@ menu {
 
 .header-nav {
   cursor: pointer;
+}
+
+.menu-container .btn-project.focused {
+  box-shadow: none;
+}
+
+.menu-container .btn-project.active {
+  box-shadow: none;
+  background: #e1e1e1;
+  padding: 20px 10px;
+}
+
+.menu-container .btn-project {
+  padding: 20px 10px;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+hr {
+  margin: 2px 0px;
 }

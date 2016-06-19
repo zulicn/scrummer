@@ -15,6 +15,6 @@ scrummer.controller('newResourceCtrl', ['$scope', 'uploadsFactory', '$location',
 
   $scope.upload = function() {
     $scope.uploader.uploadItem(0);
-    $location.path('/projects/' + $routeParams.project_id);
+    $location.path('/projects/' + $routeParams.project_id + '/resources');
   }
 }]);
