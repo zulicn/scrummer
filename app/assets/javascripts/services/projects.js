@@ -7,7 +7,7 @@ scrummer.factory('projectFactory', function ($http, $q, $location, $rootScope) {
       return $http.get('/api/projects/' + id);
     },
     create: function(name,code_name,description,selected_users) {
-      return $http.post('api/projects', {name : name,code_name:code_name,description:description,selected_users:selected_users});
+      return $http.post('api/projects', { name : name, code_name:code_name, description:description, selected_users:selected_users });
     },
     remainingTickets: function(id) {
       return $http.get('/api/projects/' + id + '/remaining_tickets');

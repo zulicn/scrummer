@@ -64,18 +64,14 @@ scrummer.controller('newProjectCtrl', ['$scope', '$location','projectFactory', '
     });
 
     $scope.saveProject = function() {
-      if ($scope.newprojectform.$valid) {
-        projectFactory.create($scope.project.name,$scope.project.code_name,$scope.project.description,$scope.selected_users)
-        .success(function(resp) {
-          alertService.add("Project added", 'success');
-          $location.path('/dashboard');
-        })
-        .error(function(resp) {
-          alertService.add("Error adding project", 'danger');
-          $location.path('/project/new');
-        });
-      } else {
-        $scope.newprojectform.submitted = true;
-      }
+      projectFactory.create($scope.project.name,$scope.project.code_name,$scope.project.description,$scope.selected_users)
+      .success(function(resp) {
+        alertService.add("Project added", 'success');
+        $location.path('/dashboard');
+      })
+      .error(function(resp) {
+        alertService.add("Error adding project", 'danger');
+        $location.path('/project/new');
+      });
     }
 }]);
