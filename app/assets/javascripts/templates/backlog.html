@@ -7,39 +7,48 @@
     <menu></menu>
   </div>
 
-  <div class="col-md-9 backlog-container">
+  <div class="col-md-9">
 
-    <div class="row" ng-show="user_role == 'Manager'">
-      <button class="btn btn-common" ng-click="open('lg')">Start New Sprint</button>
-      <a class="btn btn-common" href="/#/projects/{{project.id}}/tickets">Create ticket</a>
-    </div><br>
+    <div class="backlog-container" ng-show="tickets.length > 0 || selectedTickets.length > 0">
 
-    <div class="row">
-      <div class="panel panel-common">
-        <div class="panel-heading">New Sprint</div>
+      <div class="row" ng-show="user_role == 'Manager'">
+        <button class="btn btn-common" ng-click="open('lg')" ng-disabled="selectedTickets.length == 0">Start New Sprint</button>
+      </div><br>
 
-        <div ui-sortable="selectedItems" class="panel-body ticket-space-backlog" ng-model="selectedTickets">
-          <div class="well ticket" ng-repeat="ticket in selectedTickets">
-            <ticket></ticket>
+      <div class="row">
+        <div class="panel panel-common">
+          <div class="panel-heading">New Sprint</div>
+
+          <div ui-sortable="selectedItems" class="panel-body ticket-space-backlog" ng-model="selectedTickets">
+            <div class="well ticket" ng-repeat="ticket in selectedTickets">
+              <ticket></ticket>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <img src="/assets/dragAndDrop.png" alt="Description" style="display:inline-block; display: inline-block; width: 130px; margin: 5px 35%; opacity: 0.6;" ng-show="selectedTickets.length <= 0 && tickets.length > 0"/>
+
+    <div class="backlog-container">
+      <div class="row" ng-show="user_role == 'Manager'">
+        <a class="btn btn-common" href="/#/projects/{{project.id}}/tickets">Create ticket</a>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="panel panel-common">
+          <div class="panel-heading">Backlog</div>
+          <div ui-sortable="notSelectedItems" class="panel-body ticket-space-backlog" ng-model="tickets">
+              <div class="well ticket" ng-repeat="ticket in tickets">
+                <ticket></ticket>
+              </div>
           </div>
         </div>
       </div>
+
     </div>
-
-
-
-
-    <div class="row">
-      <div class="panel panel-common">
-        <div class="panel-heading">Backlog</div>
-        <div ui-sortable="notSelectedItems" class="panel-body ticket-space-backlog" ng-model="tickets">
-            <div class="well ticket" ng-repeat="ticket in tickets">
-              <ticket></ticket>
-            </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
 
