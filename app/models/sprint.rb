@@ -9,8 +9,8 @@ class Sprint < ActiveRecord::Base
     {
       id:          id,
       name:        name,
-      start_date:  start_date.nil? ? nil : start_date.strftime("%d.%m.%Y"),
-      end_date:    end_date.nil? ? nil : end_date.strftime("%d.%m.%Y")
+      start_date:  start_date.nil? ? '' : start_date.strftime("%d.%m.%Y"),
+      end_date:    end_date.nil? ? '' : end_date.strftime("%d.%m.%Y")
     }
   end
 end
