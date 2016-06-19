@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "no-reply@scrummer-nwt.herokuapp.com"
+  default from: "no-reply@scrummer.herokuapp.com"
 
   def confirmation_email(user, host)
     @user = user
