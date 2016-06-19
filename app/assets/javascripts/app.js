@@ -92,7 +92,7 @@ scrummer.config(['$routeProvider',
         templateUrl: 'new_message.html',
         controller: 'newMessageCtrl'
       }).
-      when('/ticket/:id', {
+      when('/projects/:project_id/ticket/:id', {
         templateUrl: 'show_ticket.html',
         controller: 'ticketCtrl'
       }).
@@ -100,7 +100,7 @@ scrummer.config(['$routeProvider',
         templateUrl: 'new_ticket.html',
         controller: 'newTicketCtrl'
       }).
-      when('/ticket/:id/edit', {
+      when('/projects/:project_id/ticket/:id/edit', {
         templateUrl: 'edit_ticket.html',
         controller: 'editTicketCtrl'
       }).

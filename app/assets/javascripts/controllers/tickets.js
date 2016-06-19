@@ -52,7 +52,7 @@ scrummer.controller('editTicketCtrl', ['$scope', '$location', '$routeParams', 't
         ticketsFactory.update($routeParams.id, $scope.ticket)
         .success(function(resp) {
           alertService.add("Ticket updated", 'success');
-          $location.path('/ticket/' + $routeParams.id);
+          $location.path('/projects/' + $routeParams.project_id + '/ticket/' + $routeParams.id);
         })
         .error(function(resp) {
           alertService.add("Error adding ticket", 'danger');
